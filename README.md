@@ -21,7 +21,7 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 
 ## Data Processing and Structuring
 - [X] Data downsampled to 200 Hz
-- [ ] Check for anti-aliasing
+- [X] Check for anti-aliasing
 - [X] Sleep trials split into trials of 5 sec long each
 - [X] Data dimension structured to be 1 X 19 X 1000 to pass to the CNN
 
