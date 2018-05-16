@@ -11,4 +11,5 @@ This is an attempt to classify people who had a high dream recall rate from thos
 Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 * 36 subjects - 18 dreamers and 18 non-dreamers
 * Sleep trials of 30 sec interval sampled at 1000 Hz
+* 19 EEG electrodes
 * Sleep trials segregated based on sleep stage (S1,S2,REM and SWS) as annotated by an expert
