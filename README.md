@@ -1,4 +1,4 @@
-# Learning to dream from dreamers
+# Learning to recall dreams from dreamers
 This is an attempt to classify people who had a high dream recall rate from those who didn't based on their EEG data recorded during sleep using a deep convolutional network architecture. <br/>
 [More about me](https://arnaghosh.github.io/)
 
