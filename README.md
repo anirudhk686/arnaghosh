@@ -28,7 +28,8 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [X] Train network on SWS sleep data. 80% training data from bag of sleep segments, 20% for validaton
 - [ ] Train network on 34 subjects and test on remaining 2 subjects
 - [ ] Use REM and S2 data. S1 data may not be enough!! :/
-- [ ] Train a subject identifier
+- [X] Train a subject identifier
+- [ ] Choose parameters for good subject classifier
 
 ## Visualizing features
 - [ ] Use GAP
