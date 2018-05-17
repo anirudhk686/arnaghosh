@@ -44,3 +44,4 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 ## Further analysis
 - [ ] Interpret neurological basis of extracted features
 - [ ] Learning how people dream or what affects dream recall
+- [ ] Extend to bigger datasets of M/EEG recordings
