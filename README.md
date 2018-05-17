@@ -30,7 +30,9 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [ ] Train network on 34 subjects and test on remaining 2 subjects
 - [ ] Use REM and S2 data. S1 data may not be enough!! :/
 - [X] Train a subject identifier
-- [ ] Choose parameters for good subject classifier
+- [X] Choose parameters for good subject classifier
+- [ ] Confusion matrix for subject prediction
+- [ ] Try subj prediction with lesser training data
 
 ## Visualizing features
 - [ ] Use GAP
