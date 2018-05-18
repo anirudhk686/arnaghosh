@@ -44,6 +44,11 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 * Good accuracy at sleep segment level, but not at subject level
 * Write code for identifying subjects
 
+## Deliverables for Brainhack school
+- [ ] Develop a re-usable framework in Torch
+- [ ] Port the code to PyTorch and make a notebook
+- [ ] Write down a blog post detailing challenges faced and tips/tricks to solve them
+
 ## Further analysis
 - [ ] Interpret neurological basis of extracted features
 - [ ] Learning how people dream or what affects dream recall
