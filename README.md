@@ -22,10 +22,11 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 ## Data Processing and Structuring
 - [X] Data downsampled to 200 Hz
 - [X] Check for anti-aliasing (Thanks Andrew)
-- [X] Sleep trials split into trials of 5 sec long each
+- [X] Sleep trials split into segments of 5 sec long each
 - [X] Data dimension structured to be 1 X 19 X 1000 to pass to the CNN
 
 ## Deep Learning architecture
+![Network Architecture](https://github.com/mtl-brainhack-school-2018/arnaghosh/blob/master/Images/Sleep%20EEG.jpg "Modified Network Architecture")
 - [X] Train network on SWS sleep data. 80% training data from bag of sleep segments, 20% for validaton
 - [ ] Train network on 34 subjects and test on remaining 2 subjects
 - [ ] Use REM and S2 data. S1 data may not be enough!! :/
