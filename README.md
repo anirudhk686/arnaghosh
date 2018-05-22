@@ -28,12 +28,12 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 ## Deep Learning architecture
 ![Network Architecture](https://github.com/mtl-brainhack-school-2018/arnaghosh/blob/master/Images/Sleep%20EEG.jpg "Modified Network Architecture")
 - [X] Train network on SWS sleep data. 80% training data from bag of sleep segments, 20% for validaton
-- [ ] Train network on 34 subjects and test on remaining 2 subjects
+- [X] Train network on 34 subjects and test on remaining 2 subjects -> accuracy not good enough for 14 folds
 - [ ] Use REM and S2 data. S1 data may not be enough!! :/
 - [X] Train a subject identifier
 - [X] Choose parameters for good subject classifier
-- [ ] Confusion matrix for subject prediction
-- [ ] Try subj prediction with lesser training data
+- [X] Confusion matrix for subject prediction
+- [ ] Try subj prediction with lesser training data -> presently running for 75%, 50% not good enough. (What's good enough?)
 
 ## Visualizing features
 - [ ] Use GAP
