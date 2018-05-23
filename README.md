@@ -33,7 +33,8 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [X] Train a subject identifier
 - [X] Choose parameters for good subject classifier
 - [X] Confusion matrix for subject prediction
-- [ ] Try subj prediction with lesser training data -> presently running for 75%, 50% not good enough. (What's good enough?)
+- [X] Try subj prediction with lesser training data -> Better accuracy with more filters (more params)
+- [ ] Too many params in network, yet better accuracy -> investigate
 
 ## Visualizing features
 - [ ] Use GAP
