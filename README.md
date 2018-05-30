@@ -34,7 +34,7 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [X] Choose parameters for good subject classifier
 - [X] Confusion matrix for subject prediction
 - [X] Try subj prediction with lesser training data -> Better accuracy with more filters (more params)
-- [ ] Too many params in network, yet better accuracy -> investigate
+- [X] Too many params in network, yet better accuracy -> Increasing linear layers improves subject ID, but affects dreamers-nonDreamers, hence more linear layers allow subject specific features to be learnt.
 
 ## Visualizing features
 - [ ] Use GAP
