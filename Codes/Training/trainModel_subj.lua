@@ -22,7 +22,10 @@ for fold=1,10 do
     SubjModel = nn.Sequential();
     SubjModel:add(nn.View(-1):setNumInputDims(3))
     SubjModel:add(nn.Dropout(0.5))
-    SubjModel:add(nn.Linear(775,8));
+    SubjModel:add(nn.Linear(640,32));
+    SubjModel:add(nn.ReLU())
+    SubjModel:add(nn.Dropout(0.5))
+    SubjModel:add(nn.Linear(32,8));
     SubjModel:add(nn.ReLU())
     --SubjModel:add(nn.Dropout(0.5))
     SubjModel:add(nn.Linear(8,36))
@@ -168,7 +171,7 @@ for fold=1,10 do
         return advLoss, gradThetaAdv
     end
 
-    batchSize = 50
+    batchSize = 32
 
     indices = torch.randperm(trainData:size(1)):long()
     trainData = trainData:index(1,indices)
@@ -180,7 +183,7 @@ for fold=1,10 do
     mock_testLabels = testLabels:index(1,mock_indices)
     mock_testLabels_subj = testLabels_subj:index(1,mock_indices)
 
-    epochs = 30
+    epochs = 20
     teAccuracy = 0
     print('Training Starting')
     local optimParams = {learningRate = 0.001, learningRateDecay = 0.002, weightDecay = 0.001}

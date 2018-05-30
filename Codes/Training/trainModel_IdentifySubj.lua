@@ -36,7 +36,8 @@ trainLabels = torch.Tensor();
 testData = torch.Tensor();
 testLabels = torch.Tensor();
 
-trainPortion = 0.75;
+trainPortion = 0.4;
+trainPortion_samples = 25*6;
 
 for i=1,data:size(1) do
 	if subj_labels[i]>20 then subj_labels[i]=subj_labels[i]-2; end -- subj 21 and 22 are absent!!
@@ -48,10 +49,14 @@ for i=1,tot_subjects do
     ind = ind:reshape(ind:size(1));
     indices = torch.randperm(ind:size(1)):long();
     ind = ind:index(1,indices);
-    trainData = trainData:cat(data:index(1,ind:sub(1,torch.floor(trainPortion*ind:size(1)))),1);
+    --[[trainData = trainData:cat(data:index(1,ind:sub(1,torch.floor(trainPortion*ind:size(1)))),1);
     trainLabels = trainLabels:cat(subj_labels:index(1,ind:sub(1,torch.floor(trainPortion*ind:size(1)))),1);
     testData = testData:cat(data:index(1,ind:sub(torch.floor(trainPortion*ind:size(1))+1,ind:size(1))),1);
-    testLabels = testLabels:cat(subj_labels:index(1,ind:sub(torch.floor(trainPortion*ind:size(1))+1,ind:size(1))),1);
+    testLabels = testLabels:cat(subj_labels:index(1,ind:sub(torch.floor(trainPortion*ind:size(1))+1,ind:size(1))),1);--]]
+    trainData = trainData:cat(data:index(1,ind:sub(1,torch.floor(trainPortion_samples))),1);
+    trainLabels = trainLabels:cat(subj_labels:index(1,ind:sub(1,torch.floor(trainPortion_samples))),1);
+    testData = testData:cat(data:index(1,ind:sub(torch.floor(trainPortion_samples)+1,ind:size(1))),1);
+    testLabels = testLabels:cat(subj_labels:index(1,ind:sub(torch.floor(trainPortion_samples)+1,ind:size(1))),1);
 end
 
 print("data loading done =====>")
@@ -105,7 +110,7 @@ mock_testData = testData:index(1,mock_indices)
 mock_testLabels = testLabels:index(1,mock_indices)
 --mock_testLabels_subj = testLabels_subj:index(1,mock_indices)
 
-epochs = 60
+epochs = 100
 teAccuracy = 0
 print('Training Starting')
 local optimParams = {learningRate = 0.003, learningRateDecay = 0.002, weightDecay = 0.001}
@@ -223,4 +228,4 @@ for i=1,classes:size(1) do
    print(classes[i], 100*class_perform[i]/class_size[i] .. " % ")
 end
 
-matio.save('CF_0.5.mat',conf.mat);
+matio.save('CF_25.mat',conf.mat);

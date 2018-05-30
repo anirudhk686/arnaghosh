@@ -60,24 +60,70 @@ extractor:add(nn.SpatialMaxPooling(1,2,1,2));--]]
 
 --extractor:add(nn.SpatialAveragePooling(1,75,1,15));
 
+extractor:add(nn.SpatialConvolution(1,8,1,51,1,4,0,25))
+extractor:add(nn.SpatialBatchNormalization(8))
+extractor:add(nn.ReLU())
+extractor:add(nn.SpatialConvolution(8,16,1,5,1,1,0,2))
+extractor:add(nn.SpatialBatchNormalization(16))
+extractor:add(nn.ReLU())
+extractor:add(nn.SpatialMaxPooling(1,5,1,5))
+
+extractor:add(nn.Dropout(0.5))
+extractor:add(nn.SpatialConvolution(16,32,1,25,1,2,0,12))
+extractor:add(nn.SpatialBatchNormalization(32))
+extractor:add(nn.ReLU())
+--[[extractor:add(nn.SpatialConvolution(32,32,1,5,1,1,0,2))
+extractor:add(nn.SpatialBatchNormalization(32))
+extractor:add(nn.ReLU())--]]
+extractor:add(nn.SpatialMaxPooling(1,5,1,5))
+
+extractor:add(nn.Dropout(0.5))
+extractor:add(nn.SpatialConvolution(32,128,19,1,1,1,0,0))
+extractor:add(nn.SpatialBatchNormalization(128))
+extractor:add(nn.ReLU())
+--extractor:add(nn.SpatialMaxPooling(1,2,1,2))
+
+classifier = nn.Sequential();
+classifier:add(nn.View(-1):setNumInputDims(3))
+classifier:add(nn.Dropout(0.5))
+classifier:add(nn.Linear(640,8))
+classifier:add(nn.BatchNormalization(8))
+classifier:add(nn.ReLU())
+classifier:add(nn.Dropout(0.5))
+--classifier:add(nn.Linear(32,8))
+--classifier:add(nn.BatchNormalization(8))
+--classifier:add(nn.ReLU())
+--classifier:add(nn.Dropout(0.5))
+classifier:add(nn.Linear(8,2))
+--classifier:add(nn.BatchNormalization(4))
+--classifier:add(nn.Tanh())
+classifier:add(nn.LogSoftMax())
+--]]
+model:add(extractor);
+model:add(classifier);
+return model
+
+--[[
+ model changed from subjID. prev model:-
+
 extractor:add(nn.SpatialConvolution(1,16,1,101,1,4,0,50))
 extractor:add(nn.SpatialBatchNormalization(16))
 extractor:add(nn.ReLU())
 extractor:add(nn.SpatialMaxPooling(1,2,1,2))
 
-extractor:add(nn.SpatialConvolution(16,16,1,25,1,2,0,12))
-extractor:add(nn.SpatialBatchNormalization(16))
+extractor:add(nn.SpatialConvolution(16,32,1,25,1,2,0,12))
+extractor:add(nn.SpatialBatchNormalization(32))
 extractor:add(nn.ReLU())
 extractor:add(nn.SpatialMaxPooling(1,2,1,2))
 
-extractor:add(nn.SpatialConvolution(16,25,19,1,1,1,0,0))
-extractor:add(nn.SpatialBatchNormalization(25))
+extractor:add(nn.SpatialConvolution(32,64,19,1,1,1,0,0))
+extractor:add(nn.SpatialBatchNormalization(64))
 extractor:add(nn.ReLU())
 
 classifier = nn.Sequential();
 classifier:add(nn.View(-1):setNumInputDims(3))
 classifier:add(nn.Dropout(0.5))
-classifier:add(nn.Linear(775,32))
+classifier:add(nn.Linear(1984,32))
 classifier:add(nn.BatchNormalization(32))
 classifier:add(nn.ReLU())
 classifier:add(nn.Dropout(0.5))
@@ -89,7 +135,7 @@ classifier:add(nn.Linear(8,2))
 --classifier:add(nn.BatchNormalization(4))
 --classifier:add(nn.Tanh())
 classifier:add(nn.LogSoftMax())
---]]
 model:add(extractor);
 model:add(classifier);
 return model
+--]]
