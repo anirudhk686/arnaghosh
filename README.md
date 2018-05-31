@@ -46,7 +46,7 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 * Write code for identifying subjects
 
 ## Deliverables for Brainhack school
-- [ ] Develop a re-usable framework in Torch
+- [X] Develop a re-usable framework in Torch -> Training and Data preparation files added with some comments, descriptions added in Readme file in Codes folder
 - [ ] Port the code to PyTorch and make a notebook
 - [ ] Write down a blog post detailing challenges faced and tips/tricks to solve them
 
