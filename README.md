@@ -50,7 +50,7 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [ ] Port the code to PyTorch and make a notebook
 - [ ] Write down a blog post detailing challenges faced and tips/tricks to solve them
 
-## Further analysis
+## Further scope
 - [ ] Interpret neurological basis of extracted features
 - [ ] Learning how people dream or what affects dream recall
 - [ ] Extend to bigger datasets of M/EEG recordings
