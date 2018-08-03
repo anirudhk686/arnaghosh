@@ -54,3 +54,6 @@ Courtesy - [CoCo Lab](http://www.karimjerbi.com/index.html)
 - [ ] Interpret neurological basis of extracted features
 - [ ] Learning how people dream or what affects dream recall
 - [ ] Extend to bigger datasets of M/EEG recordings
+
+## Important Resources
+* Visualizing CNN decision in automated sleep scoring - [Link](http://ceur-ws.org/Vol-2142/paper5.pdf)
